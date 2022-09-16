@@ -40,3 +40,17 @@ while n > 0:
     n //=2
 print(some_str)
 
+#5. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
+print('task_005')
+k = int(input('Введите число для рядя Фибоначчи: '))
+fibonaccilist = [0]*(k*2+1)
+fibonaccilist[k] = 0
+fibonaccilist[k+1] = 1
+
+for i in range(k+2, len(fibonaccilist)):
+    fibonaccilist[i] = fibonaccilist[i-2] + fibonaccilist[i - 1]
+
+for i in range(k, -1, -1):
+    fibonaccilist[i] = fibonaccilist[i+2] - fibonaccilist[i+1]
+
+print(fibonaccilist)
